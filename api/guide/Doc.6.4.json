@@ -1,0 +1,61 @@
+{
+  "shortName" : "6.4 Справочно-информациооный фонд",
+  "fullName"  : "6.4 Справочно-информациооный фонд",
+  "document"  : [
+    {
+      "type"      : "title-2",
+      "content"   : "Справочно-информациооный фонд",
+      "position"  : "center"
+
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "В Архиве образован и успешно функционирует Справочно-информационный фонд, который представляет собой совокупность научно-методических и других документов по проблемам архивоведения, археографии, смежных с ними исторических дисциплин. В СИФе содержится свыше 2-х тыс. единиц методической литературы.",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    },
+
+    {
+      "type"      : "paragraph",
+      "content"   : "",
+      "position"  : "justify"
+    }
+  ]
+}

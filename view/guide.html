@@ -1,0 +1,22 @@
+<div id="guide">
+  <div id="banner" class="banner">
+    <img class="img" src="/img/banner.jpg" />
+    <h2 class="name" ng-bind="lang._.guide.name"></h2>
+    <span class="description" ng-bind="lang._.guide.description"></span>
+  </div>
+
+  <div class="content row">
+    <h1 class="title"><span class="text"></span></h1>
+
+    <div class="document">
+      <div id="guide-nav" class="pages absolute col-1">
+        <h4 class="h4"></h4>
+        <span class="link" ng-class="{active : guide.now == link.id}" ng-repeat="link in links" ng-click="changeGuide(link)">
+          <span ng-bind="link.shortName" title="{{link.fullName}}"></span>
+        </span>
+      </div>
+
+      <div id="guide-document" class="page col-3 offset-1" ng-bind-html="guide.document[guide.now]"></div>
+    </div>
+  </div>
+</div>

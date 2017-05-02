@@ -1,0 +1,41 @@
+#footer {
+  background: #000;
+  padding: 16px 0;
+}
+
+#footer .nav .link {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 4px;
+  padding: 4px;
+}
+
+#footer .nav .link:hover {
+  text-decoration: underline;
+}
+
+#footer .nav .link.active {
+  color: #31a9b8;
+  cursor: default;
+  text-decoration: none;
+}
+
+#footer .copy {
+  color: #fff;
+  text-align: center;
+}
+
+#footer .autor {
+  color: #fff;
+  padding: 0 16px;
+  text-align: right;
+}
+
+#footer .autor .link {
+  color: #31a9b8;
+}
+
+#footer .autor .link:hover {
+  text-decoration: underline;
+}

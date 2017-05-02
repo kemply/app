@@ -1,0 +1,251 @@
+#body {
+  background: #fff;
+}
+
+#enquiry .title {
+  display: block;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 16px auto;
+  position: relative;
+  text-align: center;
+}
+
+#enquiry .title.small {
+  font-size: 24px;
+}
+
+#enquiry .title:before {
+  background: #000;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 0.6em;
+  width: 100%;
+  z-index: 1;
+}
+
+#enquiry .title .text {
+  background: #fff;
+  display: inline-block;
+  font-family: inherit;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+#enquiry .blocks {
+  padding: 40px 0;
+}
+
+#enquiry .blocks .card {
+  padding: 32px;
+  vertical-align: top;
+}
+
+#enquiry .blocks .block {
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  text-align: center;
+  transition: 0.15s background, 0.6s color;
+}
+
+#enquiry .blocks .block.faq {
+  background: #42bdcd;
+}
+
+#enquiry .blocks .block.faq:hover {
+  background: #31a9b8;
+}
+
+#enquiry .blocks .block.manual {
+  background: #df4c37;
+}
+
+#enquiry .blocks .block.manual:hover {
+  background: #cf3721;
+}
+
+#enquiry .blocks .block.feedback {
+  background: #2e9e46;
+}
+
+#enquiry .blocks .block.feedback:hover {
+  background: #258039;
+}
+
+#enquiry .blocks .block.for-owners {
+  background: #e38e43;
+}
+
+#enquiry .blocks .block.for-owners:hover {
+  background: #de7a22;
+}
+
+#enquiry .blocks .icon {
+  color: inherit;
+  display: inline-block;
+  font-size: 80px;
+  padding-top: 52px;
+  vertical-align: middle;
+}
+
+#enquiry .blocks .name {
+  color: inherit;
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#enquiry .contact {
+  margin-bottom: 16px;
+}
+
+#enquiry .contact .key {
+  display: inline-block;
+  font-weight: 500;
+  text-align: left;
+  width: 80px;
+}
+
+#enquiry .contact .value {
+  display: inline-block;
+  text-align: left;
+  width: 240px;
+}
+
+#enquiry .contact .value.link {
+  color: #31a9b8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#enquiry .contact .value.link:hover {
+  text-decoration: underline;
+}
+
+#enquiry .manual .block {
+  background: #ececec;
+  border: 1px solid #d9d9d9;
+  display: block;
+  padding: 16px 32px;
+  position: relative;
+  margin: 16px auto;
+}
+
+#enquiry .manual .block:before {
+  border-right: 30px solid transparent;
+  border-top: 30px solid #e46a58;
+  content: "";
+  display: block;
+  height: 0;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 0;
+}
+
+#enquiry .manual .link {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+#enquiry .manual .link:hover {
+  text-decoration: underline;
+}
+
+#enquiry .manual .description {
+  display: block;
+  margin-bottom: 4px;
+}
+
+#enquiry .faq .block {
+  background: #ececec;
+  border: 1px solid #d9d9d9;
+  display: block;
+  padding: 16px 32px;
+  position: relative;
+  margin: 16px auto;
+}
+
+#enquiry .faq .block:before {
+  border-right: 30px solid transparent;
+  border-top: 30px solid #61c8d5;
+  content: "";
+  display: block;
+  height: 0;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 0;
+}
+
+#enquiry .faq .link {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+#enquiry .faq .link .span {
+  display: inline-block;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0);
+  transition: 0.15s all;
+}
+
+#enquiry .faq .link:hover .span {
+  border-color: #000;
+}
+
+#enquiry .faq .description {
+  display: block;
+  margin-bottom: 4px;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.15s all;
+}
+
+#enquiry .faq .input {
+  display: none;
+}
+
+#enquiry .faq .input:checked ~ .description {
+  max-height: 500px;
+}
+
+#map {
+  background: #d9d9d9;
+  display: block;
+  height: 400px;
+  margin: 32px auto 0 auto;
+  position: relative;
+}
+
+#map:before {
+  bottom: 0;
+  color: #4d4d4d;
+  content: "Мы на карте";
+  display: block;
+  font-size: 28px;
+  font-weight: 500;
+  left: 0;
+  padding-top: 170px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}

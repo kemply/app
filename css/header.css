@@ -1,0 +1,121 @@
+#header {
+  background: #000;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+#header .lang-dropdown {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  transition: 0.15s all;
+  vertical-align: middle;
+  width: 120px;
+  z-index: 5;
+}
+
+#header .lang-dropdown .icon {
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  transition: 0.15s all;
+}
+
+#header .lang-dropdown .options {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  max-height: 32px;
+  overflow: hidden;
+  top: -16px;
+  transition: 0.15s all;
+  width: 100%;
+}
+
+#header .lang-dropdown .options .lang {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  padding: 8px 16px 8px 28px;
+  transition: 0.15s all;
+}
+
+#header .lang-dropdown .options:hover {
+  background: #fff;
+  box-shadow: 0 0 3px #4d4d4d;
+  max-height: 160px;
+}
+
+#header .lang-dropdown .options:hover .icon {
+  color: #000;
+}
+
+#header .lang-dropdown .options:hover .lang {
+  color: #000;
+}
+
+#header .lang-dropdown .options:hover .lang:hover {
+  background: #d9d9d9;
+  cursor: pointer;
+}
+
+#header .logo .text {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#header .navigation {
+  text-align: right;
+}
+
+#header .navigation .login-link {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+#header .navigation .login-link .text {
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  transition: 0.15s background, color;
+  -moz-border-radius: 0 50px 50px 0;
+  -webkit-border-radius: 0 50px 50px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+#header .navigation .login-link .text:hover {
+  background: #fff;
+  color: #000;
+}
+
+#header .navigation .login-link .sign-up {
+  border-right: none;
+  -moz-border-radius: 50px 0 0 50px;
+  -webkit-border-radius: 50px 0 0 50px;
+  border-radius: 50px 0 0 50px;
+}
+
+#header .nav .link {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 4px;
+  padding: 4px;
+}
+
+#header .nav .link:hover {
+  text-decoration: underline;
+}
+
+#header .nav .link.active {
+  color: #61c8d5;
+  cursor: default;
+  text-decoration: none;
+}

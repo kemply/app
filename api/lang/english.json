@@ -1,0 +1,35 @@
+{
+  "search"        : "Search",
+
+  "nav"     : {
+    "guide"       : "Guide",
+    "archive"     : "Archive",
+    "enquiry"     : "Enquiry",
+    "dashboard"   : "Dashboard",
+
+    "signUp"      : "Sign Up",
+    "signIn"      : "Sing In"
+  },
+
+  "guide"   : {
+    "name"        : "Somebody archive of something",
+    "description" : "Documents about KazSSR, current politics, economics, social situation and UFOs"
+  },
+
+  "archive" : {
+    "title"       : "Reading room",
+    "funds"       : "Funds",
+    "registers"   : "Registers",
+    "cases"       : "Cases",
+    "onlyChecked" : "Only checked",
+    "eventBegin"  : "Event's beginning later",
+    "eventEnd"    : "Event's end before",
+
+    "name"        : "Name",
+    "begin"       : "Begin",
+    "end"         : "End",
+
+    "resultsPerPage"  : "Results per page",
+    "searchByContent" : "Search by content"
+  }
+}

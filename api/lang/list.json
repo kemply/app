@@ -1,0 +1,19 @@
+{
+  "en"  : {
+    "name"  : "English",
+    "code"  : "en",
+    "file"  : "/api/lang/english.json"
+  },
+
+  "ru"  : {
+    "name"  : "Русский",
+    "code"  : "ru",
+    "file"  : "/api/lang/russian.json"
+  },
+
+  "kk"  : {
+    "name"  : "Қазақша",
+    "code"  : "kk",
+    "file"  : "/api/lang/qazaq.json"
+  }
+}

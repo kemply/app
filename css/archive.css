@@ -1,0 +1,131 @@
+#body {
+  background: #fff;
+}
+
+#archive {
+  margin-bottom: 30px;
+}
+
+#archive .title {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 16px 0;
+  position: relative;
+  text-align: center;
+}
+
+#archive .title:before {
+  background: #000;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 0.6em;
+  width: 100%;
+  z-index: 1;
+}
+
+#archive .title .text {
+  background: #fff;
+  display: inline-block;
+  font-family: inherit;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+#archive .search-block {
+  font-size: 16px;
+  position: relative;
+}
+
+#archive .search-block .icon {
+  color: #b3b3b3;
+  font-size: 24px;
+  position: absolute;
+  right: 16px;
+  top: -0.14em;
+  transition: 0.15s all;
+}
+
+#archive .search-block .input {
+  border: 1px solid #b3b3b3;
+  font-size: 16px;
+  padding: 16px 64px 16px 16px;
+  transition: 0.15s all;
+  width: 100%;
+}
+
+#archive .search-block .input:focus {
+  border-color: #4d4d4d;
+}
+
+#archive .search-block .input:focus ~ .icon {
+  color: #4d4d4d;
+}
+
+#archive .filters {
+  padding-right: 8px;
+  vertical-align: top;
+}
+
+#archive .filters .block {
+  background: #ececec;
+  border: 1px solid #d9d9d9;
+  padding: 16px;
+}
+
+#archive .filters .block .tabs {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+#archive .filters .block .tabs .tab {
+  background: rgba(0, 0, 0, 0);
+  color: #31a9b8;
+  cursor: pointer;
+  display: block;
+  margin: 4px 0;
+  padding: 8px 16px;
+  transition: 0.15s all;
+}
+
+#archive .filters .block .tabs .tab:hover {
+  background: rgba(49, 169, 184, 0.15);
+}
+
+#archive .filters .block .tabs .tab.active {
+  background: #31a9b8;
+  color: #fff;
+}
+
+#archive .filters .block .h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+#archive .filters .block .option {
+  margin: 16px 0;
+}
+
+#archive .filters .block .text {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+#archive .filters .block .text.top {
+  cursor: default;
+  padding-top: 8px;
+}
+
+#archive .filters .block .select-box {
+  float: right;
+}
+
+#archive .list {
+  padding-left: 8px;
+  vertical-align: top;
+}

@@ -1,0 +1,191 @@
+#body {
+  background: #fff;
+}
+
+#guide {
+  margin: 0 auto 15px auto;
+}
+
+#guide .banner {
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#guide .banner .img {
+  margin: -5px;
+  opacity: 0.3;
+  width: calc(100% + 10px);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#guide .banner .name {
+  color: #ececec;
+  text-shadow: 0 0 3px #4d4d4d;
+  font-size: 40px;
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 30%;
+  text-align: center;
+}
+
+#guide .banner .description {
+  color: #ececec;
+  text-shadow: 0 0 3px #4d4d4d;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 45%;
+  text-align: center;
+}
+
+#guide .title {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 16px 0;
+  position: relative;
+  text-align: center;
+}
+
+#guide .title:before {
+  background: #000;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 0.6em;
+  width: 100%;
+  z-index: 1;
+}
+
+#guide .title .text {
+  background: #fff;
+  display: inline-block;
+  font-family: inherit;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+#guide .document {
+  position: relative;
+  margin-top: 64px;
+}
+
+#guide .document .h2 {
+  font-family: "MerriWeather", serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+#guide .document .h3 {
+  font-family: "MerriWeather", serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+#guide .document .h4 {
+  font-family: "MerriWeather", serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+#guide .document .p {
+  font-family: "MerriWeather", serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 8px 0;
+}
+
+#guide .document .italic {
+  font-family: "MerriWeather", serif;
+  font-style: italic;
+  margin: 16px 0;
+}
+
+#guide .document .center {
+  text-align: center;
+}
+
+#guide .document .justify {
+  text-align: justify;
+}
+
+#guide .document .justify:before {
+  content: '';
+  display: inline;
+  padding: 0 8px;
+}
+
+#guide .document .left {
+  text-align: left;
+}
+
+#guide .document .left .span {
+  display: inline-block;
+  width: 60%;
+}
+
+#guide .document .right {
+  text-align: right;
+}
+
+#guide .document .right .span {
+  display: inline-block;
+  width: 60%;
+}
+
+#guide .document .pages {
+  background: #ececec;
+  border: 1px solid #b3b3b3;
+  border-right: none;
+  overflow: auto;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+}
+
+#guide .document .pages.absolute {
+  position: absolute;
+}
+
+#guide .document .pages.fixed {
+  position: fixed;
+  top: 20px;
+}
+
+#guide .document .pages .h4 {
+  margin: 8px 0 32px 0;
+}
+
+#guide .document .pages .link {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  margin: 8px 0;
+}
+
+#guide .document .pages .link:hover {
+  text-decoration: underline;
+}
+
+#guide .document .pages .link.active {
+  color: #21727c;
+  cursor: default;
+  text-decoration: none;
+}
+
+#guide .document .page {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
