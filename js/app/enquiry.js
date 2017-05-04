@@ -1,13 +1,10 @@
 "use strict";
 ;(function(){
 
-  angular
-    .module("app.enquiry", [inc.Route, inc.Sanitize, inc.Yamap])
-    .config(configEnquiry)
-    .controller("EnquiryCTRL", EnquiryCTRL);
+  window.app
+    .controller("EnquiryCTRL", inc.concat(["scope", "root", EnquiryCTRL]));
 
-  EnquiryCTRL.$inject = [inc.scope, inc.root, inc.http, inc.location, inc.param.route];
-  function EnquiryCTRL(scope, root, http, location, param){
+  function EnquiryCTRL(scope, root){
     var title   = "Справочник";
     root.title   = "Справочник";
     root.currentPage = "enquiry";
@@ -19,17 +16,6 @@
       }
     };
 
-  }
-
-  configEnquiry.$inject = [inc.provider.route, inc.provider.location];
-  function configEnquiry(route, location){
-    location.html5Mode(true);
-
-    route
-      .when("/enquiry", {
-        templateUrl : "/view/enquiry.php",
-        controller  : "EnquiryCTRL"
-      });
   }
 
 })();

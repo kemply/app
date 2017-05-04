@@ -1,0 +1,95 @@
+/********************************/
+/*                              */
+/*        COLORS PALETTE        */
+/*                              */
+/********************************/
+
+
+// Base colors
+  $blue   : #31A9B8;
+  $black  : #000000;
+  $green  : #258039;
+  $orange : #DE7A22;
+  $red    : #CF3721;
+  $yellow : #F5BE41;
+  $white  : #FFFFFF;
+
+  // $blue   : $green;
+  // $blue   : $red;
+
+  $transparent  : RGBA(0, 0, 0, 0);
+
+// Transparentize to 0.075
+  $blue-t075    : transparentize($blue, 0.925);
+  $black-t075   : transparentize($black, 0.925);
+  $green-t075   : transparentize($green, 0.925);
+  $orange-t075  : transparentize($orange, 0.925);
+  $red-t075     : transparentize($red, 0.925);
+  $yellow-t075  : transparentize($yellow, 0.925);
+  $white-t075   : transparentize($white, 0.925);
+
+// Transparentize to 0.15
+  $blue-t15     : transparentize($blue, 0.85);
+  $black-t15    : transparentize($black, 0.85);
+  $green-t15    : transparentize($green, 0.85);
+  $orange-t15   : transparentize($orange, 0.85);
+  $red-t15      : transparentize($red, 0.85);
+  $yellow-t15   : transparentize($yellow, 0.85);
+  $white-t15    : transparentize($white, 0.85);
+
+// Transparentize to 0.30
+  $blue-t30     : transparentize($blue, 0.7);
+  $black-t30    : transparentize($black, 0.7);
+  $green-t30    : transparentize($green, 0.7);
+  $orange-t30   : transparentize($orange, 0.7);
+  $red-t30      : transparentize($red, 0.7);
+  $yellow-t30   : transparentize($yellow, 0.7);
+  $white-t30    : transparentize($white, 0.7);
+
+// Lighten to 0.075
+  $blue-l075    : lighten($blue, 0.075);
+  $black-l075   : lighten($black, 0.075);
+  $green-l075   : lighten($green, 0.075);
+  $orange-l075  : lighten($orange, 0.075);
+  $red-l075     : lighten($red, 0.075);
+  $yellow-l075  : lighten($yellow, 0.075);
+
+// Lighten to 0.15
+  $blue-l15     : lighten($blue, 0.15);
+  $black-l15    : lighten($black, 0.15);
+  $green-l15    : lighten($green, 0.15);
+  $orange-l15   : lighten($orange, 0.15);
+  $red-l15      : lighten($red, 0.15);
+  $yellow-l15   : lighten($yellow, 0.15);
+
+// Lighten to 0.30
+  $blue-l30     : lighten($blue, 0.30);
+  $black-l30    : lighten($black, 0.30);
+  $green-l30    : lighten($green, 0.30);
+  $orange-l30   : lighten($orange, 0.30);
+  $red-l30      : lighten($red, 0.30);
+  $yellow-l30   : lighten($yellow, 0.30);
+
+// Darken to 0.075
+  $blue-d075    : darken($blue, 0.075);
+  $green-d075   : darken($green, 0.075);
+  $orange-d075  : darken($orange, 0.075);
+  $red-d075     : darken($red, 0.075);
+  $yellow-d075  : darken($yellow, 0.075);
+  $white-d075   : darken($white, 0.075);
+
+// Darken to 0.15
+  $blue-d15     : darken($blue, 0.15);
+  $green-d15    : darken($green, 0.15);
+  $orange-d15   : darken($orange, 0.15);
+  $red-d15      : darken($red, 0.15);
+  $yellow-d15   : darken($yellow, 0.15);
+  $white-d15    : darken($white, 0.15);
+
+// Darken to 0.30
+  $blue-d30     : darken($blue, 0.30);
+  $green-d30    : darken($green, 0.30);
+  $orange-d30   : darken($orange, 0.30);
+  $red-d30      : darken($red, 0.30);
+  $yellow-d30   : darken($yellow, 0.30);
+  $white-d30    : darken($white, 0.30);

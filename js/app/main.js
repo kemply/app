@@ -1,12 +1,11 @@
 "use strict";
 ;(function(){
-  angular
-    .module("app", [inc.Route, inc.Sanitize, inc.Cookies, "app.guide", "app.archive", "app.enquiry"])
-    .config(Config)
-    .controller("MainCTRL", MainCTRL)
+  window.app = angular
+    .module("app", inc.concat(["Route", "Sanitize", "Cookies", "Yamap"]))
+    .config(inc.concat(["provider.route", "provider.location", Config]))
+    .controller("MainCTRL", inc.concat(["scope", "root", "http", "store.cookies", MainCTRL]))
 
-    MainCTRL.$inject = [inc.scope, inc.root, inc.http, inc.store.cookies];
-    function MainCTRL(scope, root, http, cookies, nav){
+    function MainCTRL(scope, root, http, cookies){
       http
         .get("/api/lang/list.json")
         .success(function(json){
@@ -44,13 +43,40 @@
         }
     }
 
-    Config.$inject = [inc.provider.route, inc.provider.location];
     function Config(route, location){
       location.html5Mode(true);
 
       route.
         when("/", {
           redirectTo  : "/guide"
+        })
+
+        .when("/guide", {
+          templateUrl : "/view/guide.html",
+          controller  : "GuideCTRL"
+        })
+        .when("/guide/:document", {
+          templateUrl : "/view/guide.html",
+          controller  : "GuideCTRL"
+        })
+
+        .when("/archive", {
+          templateUrl : "/view/archive.php",
+          controller  : "ArchiveCTRL"
+        })
+
+        .when("/enquiry", {
+          templateUrl : "/view/enquiry.php",
+          controller  : "EnquiryCTRL"
+        })
+
+        .when("/panel", {
+          templateUrl : "/view/panel.php",
+          controller  : "PanelCTRL"
+        })
+        .when("/panel/:module", {
+          templateUrl : "/view/panel.php",
+          controller  : "PanelCTRL"
         });
     }
 })();

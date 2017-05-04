@@ -35,11 +35,14 @@
     <link href="/css/footer.css" rel="stylesheet" type="text/css" />
     <link href="/css/ui.css" rel="stylesheet" type="text/css" />
 
+    <link href="https://file.myfontastic.com/ABA5yUrw93ntWVEnGgxxn4/icons.css" rel="stylesheet" type="text/css" />
+
     <link href="/css/guide.css" rel="stylesheet" type="text/css" />
     <link href="/css/archive.css" rel="stylesheet" type="text/css" />
     <link href="/css/enquiry.css" rel="stylesheet" type="text/css" />
 
     <script src="/js/dictionary.js?time=<?php echo (int) microtime(true); ?>"></script>
+    <script src="/js/JSON2HTML.js?time=<?php echo (int) microtime(true); ?>"></script>
 
     <script src="/js/angular/main.js"></script>
     <script src="/js/angular/cookies.js"></script>
@@ -47,13 +50,13 @@
     <script src="/js/angular/sanitize.js"></script>
     <script src="/js/angular/yamap.js"></script>
 
+    <script src="/js/app/main.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/guide.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/archive.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/enquiry.js?time=<?php echo (int) microtime(true); ?>"></script>
-    <script src="/js/app/main.js?time=<?php echo (int) microtime(true); ?>"></script>
-    <!-- <script src="/js/app/controller/guide.js"></script> -->
+    <script src="/js/app/panel.js?time=<?php echo (int) microtime(true); ?>"></script>
   </head>
-  <body id="body">
+  <body id="body" autoscroll="true">
 
     <header id="header" ng-controller="MainCTRL">
       <div class="row">
@@ -65,6 +68,7 @@
           <a class="link" ng-class="{active:currentPage == 'guide'}" href="/guide" ng-bind="lang._.nav.guide"></a>
           <a class="link" ng-class="{active:currentPage == 'archive'}" href="/archive" ng-bind="lang._.nav.archive"></a>
           <a class="link" ng-class="{active:currentPage == 'enquiry'}" href="/enquiry" ng-bind="lang._.nav.enquiry"></a>
+          <a class="link" ng-class="{active:currentPage == 'panel'}" href="/panel">Панель управления</a>
         </nav>
 
         <div class="navigation line col-1">
@@ -106,6 +110,8 @@
         </div>
       </div>
     </footer>
+
+
   </body>
 </html>
 <?php ob_end_flush(); ?>

@@ -1,0 +1,45 @@
+@import "inc/palette";
+
+#content {
+  min-height: 100%;
+  width: 100%;
+
+  .parent {
+    display: block;
+    text-align: center;
+  }
+}
+
+#sidebar {
+  background: $white-d075;
+  padding: 16px;
+  position: absolute;
+
+  .link {
+    background: transparent;
+    color: $blue;
+    cursor: pointer;
+    display: block;
+    margin: 4px 0;
+    padding: 8px 16px;
+    transition: .15s all;
+    &:hover { background: $blue-t15; }
+    &.active {
+      background: $blue;
+      color: $white;
+      cursor: default;
+    }
+
+    .icon {
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 8px;
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+#content {
+  padding: 16px;
+}

@@ -28,10 +28,17 @@
 }
 
 
-body {
+#body {
+  bottom: 0;
+  left: 0;
   min-width: 1300px;
+  position: absolute;
+  top: 0;
 }
 
+#content {
+  min-height: 100%;
+}
 
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.15);
