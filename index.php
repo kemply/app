@@ -29,6 +29,8 @@
 
     <title id="title" ng-bind="title"></title>
 
+    <link href="/img/favicon.png" rel="icon" />
+
     <link href="/css/fonts.css" rel="stylesheet" type="text/css" />
     <link href="/css/base.css" rel="stylesheet" type="text/css" />
     <link href="/css/header.css" rel="stylesheet" type="text/css" />
@@ -41,6 +43,7 @@
     <link href="/css/archive.css" rel="stylesheet" type="text/css" />
     <link href="/css/enquiry.css" rel="stylesheet" type="text/css" />
 
+    <script src="/js/md5.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/dictionary.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/JSON2HTML.js?time=<?php echo (int) microtime(true); ?>"></script>
 
@@ -56,9 +59,9 @@
     <script src="/js/app/enquiry.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/panel.js?time=<?php echo (int) microtime(true); ?>"></script>
   </head>
-  <body id="body" autoscroll="true">
+  <body id="body" ng-controller="MainCTRL" ng-keyup="modal.close($event)" ng-class="{noscroll:(signIn||signUp)}">
 
-    <header id="header" ng-controller="MainCTRL">
+    <header id="header">
       <div class="row">
         <div class="logo line col-1">
           <a href="/" class="text">logotype</a>
@@ -68,13 +71,13 @@
           <a class="link" ng-class="{active:currentPage == 'guide'}" href="/guide" ng-bind="lang._.nav.guide"></a>
           <a class="link" ng-class="{active:currentPage == 'archive'}" href="/archive" ng-bind="lang._.nav.archive"></a>
           <a class="link" ng-class="{active:currentPage == 'enquiry'}" href="/enquiry" ng-bind="lang._.nav.enquiry"></a>
-          <a class="link" ng-class="{active:currentPage == 'panel'}" href="/panel">Панель управления</a>
+          <a class="link" ng-class="{active:currentPage == 'panel'}" href="/panel">Функциональная панель</a>
         </nav>
 
         <div class="navigation line col-1">
           <div class="login-link">
-            <span class="text sign-up" onclick="modal.open('sign-up')" ng-bind="lang._.nav.signUp"></span>
-            <span class="text sign-in" onclick="modal.open('sign-in')" ng-bind="lang._.nav.signIn"></span>
+            <span class="text sign-up" ng-click="modal.signUp = true" ng-bind="lang._.nav.signUp"></span>
+            <span class="text sign-in" ng-click="modal.signIn = true" ng-bind="lang._.nav.signIn"></span>
           </div>
 
           <div class="lang-dropdown">
@@ -90,7 +93,7 @@
 
     <div id="content" ng-view></div>
 
-    <footer id="footer" ng-controller="MainCTRL">
+    <footer id="footer">
       <div class="row">
 
         <div class="col-1">
@@ -111,6 +114,47 @@
       </div>
     </footer>
 
+    <div id="sign-in" class="modal" data="signIn" ng-click="modal.close($event)" ng-class="{active:modal.signIn}">
+      <div class="inner col-1">
+        <h3 class="title">Авторизация</h3>
+        <form class="form" ng-submit="signIn()">
+          <label class="label text">
+            <input type="text" class="input" placeholder="Логин" ng-model="login" required>
+            <i class="icon icon-user"></i>
+          </label>
+          <label class="label text">
+            <input type="password" class="input" placeholder="Пароль" ng-model="pass" required>
+            <i class="icon icon-key"></i>
+          </label>
+          <button class="button">Войти</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="sign-up" class="modal" data="signUp" ng-click="modal.close($event)" ng-class="{active:modal.signUp}">
+      <div class="inner col-1">
+        <h3 class="title">Регистрация</h3>
+        <form class="form" ng-submit="signUp()">
+          <label class="label text">
+            <input type="text" class="input" placeholder="Фамилия" ng-model="lastname" required>
+            <i class="icon icon-user"></i>
+          </label>
+
+          <label class="label text">
+            <input type="password" class="input" placeholder="Имя" ng-model="firstname" required>
+            <i class="icon icon-key"></i>
+          </label>
+
+          <label class="label text">
+            <input type="password" class="input" placeholder="Отчество" ng-model="patronymic" required>
+            <i class="icon icon-key"></i>
+          </label>
+          <button class="button">Войти</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 
   </body>
 </html>

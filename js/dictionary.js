@@ -1,7 +1,13 @@
 "use strict";
 !function(){
-  var a = {};
-  var i = {concat:function(array){
+  var a = {Push:function(k,v){
+    if( typeof k == "object" )
+      for(v in k) this[v] = k[v];
+    else this[k] = v;
+
+    return this
+  }};
+  var i = {Push:a.Push, concat:function(array){
     var q, i;
     for(i = 0; q = array[i]; ++i){
       if( typeof array[i] == "function" ) continue;
@@ -19,14 +25,6 @@
 
     return array;
   }};
-
-  Object.prototype.Push = function(k,v){
-    if( typeof k == "object" )
-      for(v in k) this[v] = k[v];
-    else this[k] = v;
-
-    return this
-  }
 
   window.inc = i.Push({
     Yamap     : "yaMap",
@@ -54,8 +52,9 @@
   });
 
   window.api = a.Push({
+    base      : "http://api.app.loc:8080/wax/a/archive/default",
     user      : {
-      signIn    : "",
+      signIn    : "/signIn",
       signUp    : "",
       quit      : ""
     },
@@ -70,6 +69,13 @@
       funds     : {},
       registers : {},
       cases     : {}
+    },
+
+    Prepare    : function(o){
+      var k, v, r = "";
+      for(k in o)
+        if( typeof k != "undefined" ) r += k + "=" + o[k] + "&";
+      return r.substr(0, r.length-1)
     }
   })
 

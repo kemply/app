@@ -15,5 +15,5 @@
   </a>
 </div>
 <div class="parent offset-1">
-  <div id="content" class="col-3" html-ng-bind="content"></div>
+  <div id="include" class="col-3" ng-include="content"></div>
 </div>

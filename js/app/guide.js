@@ -46,6 +46,8 @@
 
     // Create functions
     scope.changeGuide = function(link){
+      var bodyTop = document.body.scrollTop;
+      var navTop = document.getElementById("guide-nav").scrollTop;
       location.path("/guide/" + link.id);
       root.title = title + ": " + link.fullName;
       root.guide.now = link.id;
@@ -55,8 +57,16 @@
           .get(root.links[link.id].url)
           .success(function(json){
             root.guide.document[link.id] = JSON2HTML(json);
+            scrollTop(bodyTop, navTop);
           })
-      }
+      } else scrollTop(bodyTop, navTop);
+    }
+
+    function scrollTop(body, nav){
+      setTimeout(function(){
+        document.body.scrollTop = body;
+        document.getElementById("guide-nav").scrollTop = nav;
+      }, 10)
     }
 
     function changeNav(isInit){

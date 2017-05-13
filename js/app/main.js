@@ -1,11 +1,23 @@
-"use strict";
+// "use strict";
 ;(function(){
   window.app = angular
     .module("app", inc.concat(["Route", "Sanitize", "Cookies", "Yamap"]))
     .config(inc.concat(["provider.route", "provider.location", Config]))
-    .controller("MainCTRL", inc.concat(["scope", "root", "http", "store.cookies", MainCTRL]))
+    .controller("MainCTRL", inc.concat(["scope", "root", "http", "store.cookies", "cookies", MainCTRL]))
 
-    function MainCTRL(scope, root, http, cookies){
+    function MainCTRL(scope, root, http, cookies, cook){
+
+      session();
+      window.cookies = cookies;
+
+      scope.modal = {close:function(modal){
+        if( typeof modal.keyCode != "undefined" && modal.keyCode == 27 )
+          return this["signIn"] = this["signUp"] = false;
+
+        if( modal.target.classList.contains("modal") )
+          this[ modal.target.getAttribute("data") ] = false;
+      }};
+
       http
         .get("/api/lang/list.json")
         .success(function(json){
@@ -40,6 +52,36 @@
 
         root._ = function(key){
           return this.lang._[key];
+        }
+
+        scope.signIn = signIn;
+        function signIn(){
+          http({
+            method  : "POST",
+            url     : api.base + api.user.signIn,
+            headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+            data    : api.Encode({
+              login   : "sysadmin",
+              passwd  : "111"
+            })
+          })
+            .success(function(data, status, headers, config){
+              window.headers = headers();
+              console.log("Sign In", data, status, headers(), config);
+            })
+        }
+
+        function session(){
+          if( typeof cookies.get("JSESSIONID") != "undefined" ) return;
+
+          http.get("http://jsonip.com/").success(function(data){
+            var hash = md5(navigator.userAgent + data.ip + Date()).toUpperCase();
+
+            root.ip = data.ip;
+            cookies('JSESSIONID', hash, {domain});
+            return hash;
+          })
+
         }
     }
 

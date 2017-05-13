@@ -1,8 +1,13 @@
+.noscroll {
+  overflow: hidden;
+}
+
 .modal {
   background: rgba(0, 0, 0, .5);
   bottom: 0;
   display: none;
   left: 0;
+  overflow: auto;
   position: fixed;
   text-align: center;
   top: 0;
@@ -34,6 +39,7 @@
   min-width: 1300px;
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
 #content {
@@ -81,6 +87,10 @@
   padding: 8px;
   transition: 0.15s all;
   width: 100%;
+}
+.button.nm {
+  margin: 0;
+  padding: 7px 8px;
 }
 
 .button .icon {
@@ -326,8 +336,13 @@
   background: #fff;
 }
 
+.label.np {
+  margin: 0;
+}
+
 .pagination {
   display: block;
+  text-align: left;
 }
 
 .pagination .go {

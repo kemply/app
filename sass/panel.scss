@@ -1,7 +1,38 @@
 @import "inc/palette";
 
+.block {
+  display: block;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.w-1 {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.w-2 {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.w-3 {
+  display: block;
+  float: left;
+  width: 75%;
+}
+
+.w-4 {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
 #content {
   min-height: 100%;
+  padding: 16px;
   width: 100%;
 
   .parent {
@@ -40,6 +71,24 @@
   }
 }
 
-#content {
-  padding: 16px;
+#include {
+
+  .filter {
+    border: 1px solid $white-d15;
+    margin: 16px 0;
+    padding: 16px 0;
+    position: relative;
+
+    .title {
+      background: $white;
+      color: $black-l30;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 400;
+      left: 10px;
+      padding: 14px 8px;
+      position: absolute;
+      top: -24px;
+    }
+  }
 }
