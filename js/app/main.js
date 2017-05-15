@@ -1,13 +1,17 @@
 // "use strict";
 ;(function(){
   window.app = angular
-    .module("app", inc.concat(["Route", "Sanitize", "Cookies", "Yamap"]))
-    .config(inc.concat(["provider.route", "provider.location", Config]))
+    .module("app", inc.concat(['module.user', 'module.modal', "Route", "Sanitize", "Cookies", "Yamap"]))
+    .run(['$http', '$cookies', function($http, $cookies) {
+      $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+    }])
+    .config(inc.concat(["provider.route", "provider.location", "provider.http", Config]))
     .controller("MainCTRL", inc.concat(["scope", "root", "http", "store.cookies", "cookies", MainCTRL]))
 
-    function MainCTRL(scope, root, http, cookies, cook){
+    function MainCTRL(scope, root, http, cookies, hProvider, cook){
+      scope.user = root.user;
 
-      session();
+      // session();
       window.cookies = cookies;
 
       scope.modal = {close:function(modal){
@@ -54,23 +58,6 @@
           return this.lang._[key];
         }
 
-        scope.signIn = signIn;
-        function signIn(){
-          http({
-            method  : "POST",
-            url     : api.base + api.user.signIn,
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-            data    : api.Encode({
-              login   : "sysadmin",
-              passwd  : "111"
-            })
-          })
-            .success(function(data, status, headers, config){
-              window.headers = headers();
-              console.log("Sign In", data, status, headers(), config);
-            })
-        }
-
         function session(){
           if( typeof cookies.get("JSESSIONID") != "undefined" ) return;
 
@@ -85,7 +72,8 @@
         }
     }
 
-    function Config(route, location){
+    function Config(route, location, http){
+      http.defaults.withCredentials = true;
       location.html5Mode(true);
 
       route.

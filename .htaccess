@@ -6,4 +6,7 @@ RewriteEngine On
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
 
-  RewriteRule ^(guide|archive|enquiry|panel) index.php/$0 [L]
+  RewriteRule ^(guide|archive|enquiry|panel)      index.php/$0            [L]
+  RewriteRule ^(guide|archive|enquiry|panel)/(.*) index.php/$0            [L]
+
+  RewriteRule ^(apit)/(.*)/ http://api.app.loc:8080/wax/$2 [L,N,P]

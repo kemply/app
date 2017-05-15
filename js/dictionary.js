@@ -27,6 +27,10 @@
   }};
 
   window.inc = i.Push({
+    module    : {
+      user      : 'user',
+      modal     : 'modal'
+    },
     Yamap     : "yaMap",
     Cookies   : "ngCookies",
     Sanitize  : "ngSanitize",
@@ -40,7 +44,8 @@
     location  : "$location",
     provider  : {
       route     : "$routeProvider",
-      location  : "$locationProvider"
+      location  : "$locationProvider",
+      http      : "$httpProvider"
     },
     store     : {
       cookies   : "$cookieStore"
@@ -52,9 +57,10 @@
   });
 
   window.api = a.Push({
+    mirror    : '/mirror.php',
     base      : "http://api.app.loc:8080/wax/a/archive/default",
     user      : {
-      signIn    : "/signIn",
+      signIn    : "/ru/session/sessionIn",
       signUp    : "",
       quit      : ""
     },

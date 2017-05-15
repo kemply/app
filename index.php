@@ -1,4 +1,10 @@
 <?php
+  // session_name('JSESSIONID'); // Указать название Cookie = JSESSIONID
+  // session_start();            // Старт сессии
+  // $hash = session_id();       // Получить хеш-ключ сессии
+  // header('Set-Cookie: JSESSIONID=' . $hash . '; path=/; domain=.app.loc');
+  //  // Переопределить значение Set-Cookie для отправки
+
   header("Cache-Control: no-store, no-cache, must-revalidate");
   header("Expires: " . date("r"));
 
@@ -53,13 +59,18 @@
     <script src="/js/angular/sanitize.js"></script>
     <script src="/js/angular/yamap.js"></script>
 
+    <script src="/js/app/controller/user.js?time=<?php echo (int) microtime(true); ?>"></script>
+    <script src="/js/app/controller/modal.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/main.js?time=<?php echo (int) microtime(true); ?>"></script>
+
     <script src="/js/app/guide.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/archive.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/enquiry.js?time=<?php echo (int) microtime(true); ?>"></script>
     <script src="/js/app/panel.js?time=<?php echo (int) microtime(true); ?>"></script>
+
+    <script src="/test.php"></script>
   </head>
-  <body id="body" ng-controller="MainCTRL" ng-keyup="modal.close($event)" ng-class="{noscroll:(signIn||signUp)}">
+  <body id="body" ng-controller="MainCTRL" ng-keyup="modal.close($event)" ng-class="{noscroll:(modal.signIn||modal.signUp)}">
 
     <header id="header">
       <div class="row">
@@ -74,10 +85,10 @@
           <a class="link" ng-class="{active:currentPage == 'panel'}" href="/panel">Функциональная панель</a>
         </nav>
 
-        <div class="navigation line col-1">
+        <div class="navigation line col-1" ng-controller="user">
           <div class="login-link">
-            <span class="text sign-up" ng-click="modal.signUp = true" ng-bind="lang._.nav.signUp"></span>
-            <span class="text sign-in" ng-click="modal.signIn = true" ng-bind="lang._.nav.signIn"></span>
+            <span class="text sign-up" open-modal="signUp" ng-bind="lang._.nav.signUp"></span>
+            <span class="text sign-in" open-modal="signIn" ng-bind="lang._.nav.signIn"></span>
           </div>
 
           <div class="lang-dropdown">
@@ -117,13 +128,13 @@
     <div id="sign-in" class="modal" data="signIn" ng-click="modal.close($event)" ng-class="{active:modal.signIn}">
       <div class="inner col-1">
         <h3 class="title">Авторизация</h3>
-        <form class="form" ng-submit="signIn()">
+        <form class="form" ng-submit="signIn()" ng-controller="user">
           <label class="label text">
             <input type="text" class="input" placeholder="Логин" ng-model="login" required>
             <i class="icon icon-user"></i>
           </label>
           <label class="label text">
-            <input type="password" class="input" placeholder="Пароль" ng-model="pass" required>
+            <input type="password" class="input" placeholder="Пароль" ng-model="password" required>
             <i class="icon icon-key"></i>
           </label>
           <button class="button">Войти</button>
@@ -134,7 +145,7 @@
     <div id="sign-up" class="modal" data="signUp" ng-click="modal.close($event)" ng-class="{active:modal.signUp}">
       <div class="inner col-1">
         <h3 class="title">Регистрация</h3>
-        <form class="form" ng-submit="signUp()">
+        <form class="form" ng-submit="signUp()" ng-controller="user">
           <label class="label text">
             <input type="text" class="input" placeholder="Фамилия" ng-model="lastname" required>
             <i class="icon icon-user"></i>
